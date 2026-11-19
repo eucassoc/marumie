@@ -4,7 +4,6 @@
 
 BEGIN;
 
-\restrict Lt2oRaZHEm9exfVRUhggBQlHa2dragyVz0C34SiRHppZqESqd0hZsKIQb79a2IV
 
 
 
@@ -18,10 +17,8 @@ SELECT pg_catalog.setval('public.political_organizations_id_seq', 2, true);
 
 
 
-\unrestrict Lt2oRaZHEm9exfVRUhggBQlHa2dragyVz0C34SiRHppZqESqd0hZsKIQb79a2IV
 
 
-\restrict GZMxinsiFzRA5JJTBKbuj7STrNYaO20MNvgO7aDHXN67SucpyeaagstvLimkFxw
 
 
 
@@ -35,10 +32,8 @@ SELECT pg_catalog.setval('public.balance_snapshots_id_seq', 2, true);
 
 
 
-\unrestrict GZMxinsiFzRA5JJTBKbuj7STrNYaO20MNvgO7aDHXN67SucpyeaagstvLimkFxw
 
 
-\restrict HYqObsK0xMslSJqvw1F7x7ZLgTZ6hMUqJPcgzq0mhV5BtODV1KEUgCv2ezivzek
 
 
 
@@ -96,10 +91,8 @@ SELECT pg_catalog.setval('public.counterparts_id_seq', 46, true);
 
 
 
-\unrestrict HYqObsK0xMslSJqvw1F7x7ZLgTZ6hMUqJPcgzq0mhV5BtODV1KEUgCv2ezivzek
 
 
-\restrict ewVA5cVaEDIiHTlWtSvXrfxckMBb7eG8TpmOc2xxzt5BW12t6gVm4mTyVPczfJa
 
 
 
@@ -126,10 +119,8 @@ SELECT pg_catalog.setval('public.donors_id_seq', 15, true);
 
 
 
-\unrestrict ewVA5cVaEDIiHTlWtSvXrfxckMBb7eG8TpmOc2xxzt5BW12t6gVm4mTyVPczfJa
 
 
-\restrict pXPbHMCPhuVJKslZRHg9JR7TM4xObCdq4O0MwQOdzuRXgU39noAND9S0a4DpaXb
 
 
 
@@ -148,10 +139,8 @@ SELECT pg_catalog.setval('public.ledger_checkpoints_id_seq', 7, true);
 
 
 
-\unrestrict pXPbHMCPhuVJKslZRHg9JR7TM4xObCdq4O0MwQOdzuRXgU39noAND9S0a4DpaXb
 
 
-\restrict HkKucGQdavJOOEHOCT4utShvTq4vAldJI6rSYUVD9VNhh1pmnpKgwupGdInEXRv
 
 
 
@@ -226,10 +215,8 @@ INSERT INTO public.ledger_records VALUES (66, '{"spec":"deedlog/v0.1","chain":"d
 
 
 
-\unrestrict HkKucGQdavJOOEHOCT4utShvTq4vAldJI6rSYUVD9VNhh1pmnpKgwupGdInEXRv
 
 
-\restrict Ia6qGGHLfgRQwVNkSUfCgXADIQdUcdb83xaNXPBGObXxG0E03JFGWlbfqx5RKUC
 
 
 
@@ -242,10 +229,8 @@ SELECT pg_catalog.setval('public.organization_report_profiles_id_seq', 1, true);
 
 
 
-\unrestrict Ia6qGGHLfgRQwVNkSUfCgXADIQdUcdb83xaNXPBGObXxG0E03JFGWlbfqx5RKUC
 
 
-\restrict g7Z6Demw44GBpLQ120w2db5egXQhAIbHnEEByzSfgpkOKwa1l4X8nNgAZkslS9l
 
 
 
@@ -262,10 +247,8 @@ SELECT pg_catalog.setval('public.politicians_id_seq', 5, true);
 
 
 
-\unrestrict g7Z6Demw44GBpLQ120w2db5egXQhAIbHnEEByzSfgpkOKwa1l4X8nNgAZkslS9l
 
 
-\restrict jW06BNokkSghvSEs7n4KuuRdESgiF9pAQl5ea2MwMCJltBDyi2F8aFvUBERbdgR
 
 
 
@@ -281,10 +264,8 @@ SELECT pg_catalog.setval('public.politician_org_memberships_id_seq', 4, true);
 
 
 
-\unrestrict jW06BNokkSghvSEs7n4KuuRdESgiF9pAQl5ea2MwMCJltBDyi2F8aFvUBERbdgR
 
 
-\restrict prf1C6Ww4JgKGAfu44TVd6iKwI0f1Xs9ewOvE2f1Lae9ekxfPncUKbkzeKzhUn8
 
 
 
@@ -316,10 +297,8 @@ INSERT INTO public.research_fund_accounts VALUES ('housing', '宿舎費', 'expen
 
 
 
-\unrestrict prf1C6Ww4JgKGAfu44TVd6iKwI0f1Xs9ewOvE2f1Lae9ekxfPncUKbkzeKzhUn8
 
 
-\restrict RHplXNGalzT9Hl6jmZ30a3COCpFcc8z3rzA4GJy7tllVitQUAOgVW8CyNlmwMuf
 
 
 
@@ -336,10 +315,8 @@ SELECT pg_catalog.setval('public.research_fund_books_id_seq', 5, true);
 
 
 
-\unrestrict RHplXNGalzT9Hl6jmZ30a3COCpFcc8z3rzA4GJy7tllVitQUAOgVW8CyNlmwMuf
 
 
-\restrict hKSOATvp6Q3GjaNJaxcr47W2ztIX5tjcMix7x0QafAFJfbsDo7FZLctXAwNHd92
 
 
 
@@ -354,10 +331,8 @@ SELECT pg_catalog.setval('public.research_fund_documents_id_seq', 3, true);
 
 
 
-\unrestrict hKSOATvp6Q3GjaNJaxcr47W2ztIX5tjcMix7x0QafAFJfbsDo7FZLctXAwNHd92
 
 
-\restrict baHZVagt2R9AiRvwYul0TPqzuKbxGGcZ0aKvIZUeXX9rzzyMjQmY2ee1GizFNQk
 
 
 
@@ -371,10 +346,8 @@ SELECT pg_catalog.setval('public.research_fund_expenditure_groups_id_seq', 2, tr
 
 
 
-\unrestrict baHZVagt2R9AiRvwYul0TPqzuKbxGGcZ0aKvIZUeXX9rzzyMjQmY2ee1GizFNQk
 
 
-\restrict jaKhcG90p4EXrrlRWvFv9SQhpIidOyCGYepCgzBREQJnYoPbnPNCFJKHX3gj4YO
 
 
 
@@ -704,10 +677,8 @@ SELECT pg_catalog.setval('public.research_fund_journal_entries_id_seq', 318, tru
 
 
 
-\unrestrict jaKhcG90p4EXrrlRWvFv9SQhpIidOyCGYepCgzBREQJnYoPbnPNCFJKHX3gj4YO
 
 
-\restrict WUvkd4ccgpBa2rcz2yfhVXACugN9C3xF5p4Eg4IBnjKuTUSHcNh55TRTbl3S78E
 
 
 
@@ -719,10 +690,8 @@ INSERT INTO public.research_fund_group_items VALUES (2, 273, '2026-11-19 05:19:4
 
 
 
-\unrestrict WUvkd4ccgpBa2rcz2yfhVXACugN9C3xF5p4Eg4IBnjKuTUSHcNh55TRTbl3S78E
 
 
-\restrict aKWBmKqdxB74X1NwFHwo0TCrmoe66RsgWFWbueI1R3VtEyo7Wr3Sx29F1mjqUhA
 
 
 
@@ -736,10 +705,8 @@ SELECT pg_catalog.setval('public.research_fund_group_outcomes_id_seq', 2, true);
 
 
 
-\unrestrict aKWBmKqdxB74X1NwFHwo0TCrmoe66RsgWFWbueI1R3VtEyo7Wr3Sx29F1mjqUhA
 
 
-\restrict X4it2B61O11FRQJqlmYePDVKZzzPSHgn5AWNrETxz0rbkwxA2tMUpPGEfGabEnN
 
 
 
@@ -1387,10 +1354,8 @@ SELECT pg_catalog.setval('public.research_fund_journal_lines_id_seq', 636, true)
 
 
 
-\unrestrict X4it2B61O11FRQJqlmYePDVKZzzPSHgn5AWNrETxz0rbkwxA2tMUpPGEfGabEnN
 
 
-\restrict eYSAe4ABbPMJ5EMZTZcBaTWgvXHrmhbgS8YfN1RyW2dBsFrp4H1K2LJSCAG5LxK
 
 
 
@@ -1467,10 +1432,8 @@ SELECT pg_catalog.setval('public.transactions_id_seq', 77, true);
 
 
 
-\unrestrict eYSAe4ABbPMJ5EMZTZcBaTWgvXHrmhbgS8YfN1RyW2dBsFrp4H1K2LJSCAG5LxK
 
 
-\restrict 4NX7DeCB0FXu91NcGRIhSYFGxCeyDLP3LQrwyBhM91ffHMpmpsqVEHzvcbPQpL6
 
 
 
@@ -1519,10 +1482,8 @@ SELECT pg_catalog.setval('public.transaction_counterparts_id_seq', 37, true);
 
 
 
-\unrestrict 4NX7DeCB0FXu91NcGRIhSYFGxCeyDLP3LQrwyBhM91ffHMpmpsqVEHzvcbPQpL6
 
 
-\restrict X6Gby6UVv6eyBgfru7FbfOSvGGsYql0yLoZebS8rWFULD24rxsYjmqiTC1K6Sdl
 
 
 
@@ -1549,6 +1510,5 @@ SELECT pg_catalog.setval('public.transaction_donors_id_seq', 15, true);
 
 
 
-\unrestrict X6Gby6UVv6eyBgfru7FbfOSvGGsYql0yLoZebS8rWFULD24rxsYjmqiTC1K6Sdl
 
 COMMIT;
