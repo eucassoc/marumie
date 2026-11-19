@@ -33,3 +33,14 @@ export function summarizeLedgerCheckpoint(note: string): LedgerCheckpointSummary
     witnesses: [...new Set(names.filter((name) => name !== origin))],
   };
 }
+
+/**
+ * 連署サーバーの名前から、その連署サーバーでこの記録を確かめるページの URL を作る。
+ * 連署サーバーの名前はふつうホスト名なので、そのサイトに、記録の名前を `#o=` で添えて飛ぶ
+ * （witness.euca.in はこの形で記録ごとの確認ページを開く）。ホスト名でない名前には URL を作らない。
+ */
+export function witnessPageUrl(witness: string, origin: string): string | null {
+  if (!/^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$/i.test(witness))
+    return null;
+  return `https://${witness}/#o=${encodeURIComponent(origin)}`;
+}

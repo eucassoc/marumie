@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/client/components/layout/Breadcrumbs";
 import MainColumn from "@/client/components/layout/MainColumn";
 import SectionCard from "@/client/components/layout/SectionCard";
+import { witnessPageUrl } from "@/server/contexts/public-finance/domain/models/ledger-checkpoint";
 import { loadLedgerHistory } from "@/server/contexts/public-finance/presentation/loaders/load-ledger";
 import { loadOrganizations } from "@/server/contexts/public-finance/presentation/loaders/load-organizations";
 import type { LedgerEntry } from "@/shared/ledger/ledger";
@@ -94,7 +95,26 @@ export default async function LedgerPage({ params }: LedgerPageProps) {
                 <dt className="text-[13px] font-bold text-[#238778]">連署サーバー</dt>
                 <dd className="break-all text-[15px] font-bold" data-testid="ledger-witnesses">
                   {checkpoint && checkpoint.witnesses.length > 0
-                    ? checkpoint.witnesses.join("、")
+                    ? checkpoint.witnesses.map((witness, i) => {
+                        const href = witnessPageUrl(witness, checkpoint.origin);
+                        return (
+                          <span key={witness}>
+                            {i > 0 && "、"}
+                            {href ? (
+                              <a
+                                className="text-[#238778] underline"
+                                href={href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {witness}
+                              </a>
+                            ) : (
+                              witness
+                            )}
+                          </span>
+                        );
+                      })
                     : "—"}
                 </dd>
               </div>
