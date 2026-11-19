@@ -3,6 +3,7 @@ import { Noto_Sans, Noto_Sans_JP, Poppins } from "next/font/google";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import DemoNotice from "@/client/components/layout/DemoNotice";
 import Footer from "@/client/components/layout/footer/Footer";
 import Header from "@/client/components/layout/header/Header";
 import { SITE_DESCRIPTION, SITE_TITLE, shareMetadata } from "@/app/site-metadata";
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
   title: { default: SITE_TITLE, template: `%s｜${SITE_TITLE}` },
   description: SITE_DESCRIPTION,
   ...shareMetadata(),
+  // 公式ではない環境（DEMO_NOTICE のあるデモ）は検索に載せない
+  ...(process.env.DEMO_NOTICE ? { robots: { index: false, follow: false } } : {}),
 };
 
 export default function RootLayout({
@@ -57,6 +60,8 @@ export default function RootLayout({
         <div className="mt-0 min-[641px]:mt-16">
           <Footer />
         </div>
+        <DemoNotice />
+        {process.env.DEMO_NOTICE && <div aria-hidden="true" className="h-16" />}
         <SpeedInsights sampleRate={0.1} />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING_ID || ""} />
       </body>
