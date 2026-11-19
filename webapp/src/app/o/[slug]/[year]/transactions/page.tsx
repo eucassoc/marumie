@@ -1,5 +1,6 @@
 import "server-only";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import SiteBottomBlock from "@/client/components/common/SiteBottomBlock";
 import TransparencySection from "@/client/components/common/TransparencySection";
@@ -151,6 +152,14 @@ export default async function TransactionsPage({ params, searchParams }: Transac
               selectedCategories={categories}
               sort={sort}
             />
+            <p className="text-sm">
+              <Link
+                className="font-bold text-[#238778] underline"
+                href={`/o/${slug}/${financialYear}/ledger`}
+              >
+                このデータがいつ追加・修正・削除されたか、更新の記録を確かめる
+              </Link>
+            </p>
           </SectionCard>
         </div>
         <SiteBottomBlock band={<TransparencySection variant="transactions" />} />

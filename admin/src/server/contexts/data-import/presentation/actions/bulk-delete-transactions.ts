@@ -5,6 +5,7 @@ import { updateTag } from "next/cache";
 import { prisma } from "@/server/contexts/shared/infrastructure/prisma";
 import { WebappCacheInvalidator } from "@/server/contexts/shared/infrastructure/services/webapp-cache-invalidator";
 import { requireRole } from "@/server/contexts/auth/presentation/loaders/require-role";
+import { recordLedger } from "@/server/contexts/shared/presentation/ledger/record-ledger";
 
 export async function bulkDeleteTransactionsAction(ids: string[]): Promise<{
   success: boolean;
@@ -21,6 +22,8 @@ export async function bulkDeleteTransactionsAction(ids: string[]): Promise<{
         },
       },
     });
+
+    await recordLedger();
 
     updateTag("transactions-data");
     updateTag("transactions-for-csv");

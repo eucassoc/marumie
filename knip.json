@@ -8,7 +8,7 @@
   ],
   "workspaces": {
     ".": {
-      "entry": ["shared/**/*.ts", "prisma/seed.ts", "scripts/generate-sync-import-fixture.mjs"],
+      "entry": ["shared/**/*.ts", "prisma/seed.ts", "scripts/generate-sync-import-fixture.mjs", "scripts/ledger/**/*.mjs"],
       "ignore": ["docs/**"]
     },
     "webapp": {

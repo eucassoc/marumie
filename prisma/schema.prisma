@@ -173,6 +173,27 @@ model BalanceSnapshot {
   @@map("balance_snapshots")
 }
 
+// 公開している取引の変更の記録（deedlog のチェーン）。1 行が 1 レコードで、追記だけを行う。
+// ダイジェストは行のバイト列から計算するため、line は作ったときの文字列をそのまま持つ
+model LedgerRecord {
+  seq       Int      @id
+  line      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("ledger_records")
+}
+
+// 記録に対するチェックポイント（運営者の署名と、連署サーバーの連署がついた署名付きノート）
+model LedgerCheckpoint {
+  id        BigInt   @id @default(autoincrement())
+  size      Int
+  note      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([size])
+  @@map("ledger_checkpoints")
+}
+
 model Donor {
   id                BigInt            @id @default(autoincrement())
   donorType         DonorType         @map("donor_type")

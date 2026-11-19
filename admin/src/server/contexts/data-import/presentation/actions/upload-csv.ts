@@ -7,6 +7,7 @@ import { WebappCacheInvalidator } from "@/server/contexts/shared/infrastructure/
 import { SavePreviewTransactionsUsecase } from "@/server/contexts/data-import/application/usecases/save-preview-transactions-usecase";
 import type { PreviewTransaction } from "@/server/contexts/data-import/domain/models/preview-transaction";
 import { requireRole } from "@/server/contexts/auth/presentation/loaders/require-role";
+import { recordLedger } from "@/server/contexts/shared/presentation/ledger/record-ledger";
 
 const transactionRepository = new PrismaTransactionRepository(prisma);
 const cacheInvalidator = new WebappCacheInvalidator();
@@ -58,6 +59,9 @@ export async function uploadCsv(data: UploadCsvRequest): Promise<UploadCsvRespon
         errors: result.errors,
       };
     }
+
+    // 公開データの変更を記録に残す
+    await recordLedger();
 
     const message =
       result.skippedCount > 0

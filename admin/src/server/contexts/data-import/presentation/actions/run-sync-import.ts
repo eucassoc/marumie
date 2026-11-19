@@ -10,6 +10,7 @@ import { buildSyncImportFileStorage } from "@/server/contexts/shared/infrastruct
 import { WebappCacheInvalidator } from "@/server/contexts/shared/infrastructure/services/webapp-cache-invalidator";
 import { toOrganizationSyncImportErrorMessage } from "@/server/contexts/data-import/presentation/actions/sync-import-error-message";
 import { readSyncImportEnvironment } from "@/server/contexts/shared/presentation/loaders/read-sync-import-environment";
+import { recordLedger } from "@/server/contexts/shared/presentation/ledger/record-ledger";
 
 export type RunSyncImportResponse =
   | { ok: true; result: OrganizationSyncImportResult }
@@ -37,6 +38,9 @@ export async function runSyncImport(data: {
       confirmationSlug: data.confirmationSlug,
       environment: readSyncImportEnvironment(),
     });
+
+    // 置き換えで変わった公開データを記録に残す
+    await recordLedger();
 
     // ここまで来れば DB の置き換えは確定している。admin 側のデータキャッシュ無効化
     // （webapp のキャッシュ無効化は usecase が行う）に失敗しても、取り込みを失敗扱いにはしない。

@@ -6,6 +6,7 @@ import { PrismaTransactionRepository } from "@/server/contexts/shared/infrastruc
 import { DeleteAllTransactionsUsecase } from "@/server/contexts/data-import/application/usecases/delete-all-transactions-usecase";
 import { WebappCacheInvalidator } from "@/server/contexts/shared/infrastructure/services/webapp-cache-invalidator";
 import { requireRole } from "@/server/contexts/auth/presentation/loaders/require-role";
+import { recordLedger } from "@/server/contexts/shared/presentation/ledger/record-ledger";
 
 export async function deleteAllTransactionsAction(organizationId?: string): Promise<{
   success: boolean;
@@ -19,6 +20,8 @@ export async function deleteAllTransactionsAction(organizationId?: string): Prom
     const usecase = new DeleteAllTransactionsUsecase(repository);
 
     const result = await usecase.execute(organizationId);
+
+    await recordLedger();
 
     // データキャッシュを無効化してトランザクション一覧を更新
     updateTag("transactions-data");
